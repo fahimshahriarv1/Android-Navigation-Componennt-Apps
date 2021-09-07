@@ -16,8 +16,17 @@ object ApiClient {
         .baseUrl(BASE_URL)
         .addConverterFactory(GsonConverterFactory.create())
         .build()
+    private val retrofit2 = Retrofit.Builder()
+        .client(okClient)
+        .baseUrl("https://stg-api.sharetrip.net/")
+        .addConverterFactory(GsonConverterFactory.create())
+        .build()
 
     fun <T> callService(service: Class<T>): T {
         return retrofit.create(service)
+    }
+
+    fun <T> callService2(service: Class<T>): T {
+        return retrofit2.create(service)
     }
 }

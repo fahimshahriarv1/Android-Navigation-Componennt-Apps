@@ -23,7 +23,6 @@ class PaymentHistory : Fragment() {
     lateinit var binding: FragmentPaymentHistoryBinding
     lateinit var allinfo:ResponseClient
 
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
